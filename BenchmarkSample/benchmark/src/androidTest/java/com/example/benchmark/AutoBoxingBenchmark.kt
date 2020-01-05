@@ -24,15 +24,17 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+//benchmarks是一个标准的instrumentation测试
 @LargeTest
 @RunWith(AndroidJUnit4::class)
 class AutoBoxingBenchmark {
 
+    //使用BenchmarkRule
     @get:Rule
     val benchmarkRule = BenchmarkRule()
 
     /**
-     * Measure the cost of allocating a boxed integer that takes advantage of ART's cache.
+     * 测试分配利用ART的缓存的装箱整型成本
      */
     @Test
     fun integerArtCacheAlloc() {
@@ -47,7 +49,7 @@ class AutoBoxingBenchmark {
     }
 
     /**
-     * Measure the cost of allocating a boxed integer that falls outside the range of ART's cache.
+     * 测试分配在ART缓存之外的装箱整型的成本
      */
     @Test
     fun integerAlloc() {

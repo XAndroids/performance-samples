@@ -27,6 +27,11 @@ private val chars: List<Char> = List(26) { 'a' + it } + List(26) { 'A' + it }
  *
  * @param wordsInParagraph length of the paragraph to generate..
  */
+
+/**
+ * 构建一个由Ascii字母组成的随机字母字符串
+ * @param hitPercentage
+ */
 fun buildRandomParagraph(
     hitPercentage: Int = 30,
     wordsInParagraph: Int = 50

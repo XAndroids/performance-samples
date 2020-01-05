@@ -25,8 +25,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //将被基准测试的代码放在一个module中，然后创建benchmark依赖这个被测试module
+    //benchmark模块处理相关配置和测试case
     androidTestImplementation project(":ui")
     androidTestImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    //添加benchmark
     androidTestImplementation "androidx.benchmark:benchmark-junit4:$benchmark_version"
 
     androidTestImplementation 'junit:junit:4.12'

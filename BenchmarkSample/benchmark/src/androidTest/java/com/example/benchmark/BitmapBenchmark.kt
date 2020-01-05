@@ -43,14 +43,14 @@ class BitmapBenchmark {
 
     @Before
     fun setUp() {
+        //从asserts获取图片
         val inputStream = context.assets.open(JETPACK)
         bitmap = BitmapFactory.decodeStream(inputStream)
         inputStream.close()
     }
 
     /**
-     * Measure the cost of many relatively cheaper JNI calls to fetch a row of pixels, one pixel at
-     * a time.
+     * 测试许多相对便宜的JNI调用的成本，这些调用获取一行像素，一次一个像素
      */
     @Test
     fun bitmapGetPixelBenchmark() {
@@ -61,7 +61,7 @@ class BitmapBenchmark {
     }
 
     /**
-     * Measure the cost of a single expensive JNI call to fetch a row of 100 pixels.
+     * 测试获取一行100像素的单个昂贵的JNI调用
      */
     @Test
     fun bitmapGetPixelsBenchmark() {
